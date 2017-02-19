@@ -29,7 +29,53 @@ function palindrome() {
 
 // 8. The output of each of the functions should immediately appear as well.
 
-var testString = "";
-reversal(testString);
-alphabits(testString);
-palindrome(testString);
+
+
+//*************************************************
+// EVENT HANDLERS
+//*************************************************
+inputStr.addEventListener("keyup", function(e) {
+     e.which = e.which || e.keyCode;
+     if (e.which === 13) {
+// console.log("in event handler");
+     	
+     	if (alphaInput()) {
+     		runMain();
+        	
+        } else {
+     		alert("You must enter alpha characters only.")
+     		return false;
+     	}
+
+     } else { // not <Enter> key
+     	return false;
+     }
+ });
+
+// verify only alpha characters
+// UPPERCASE 65 thru 90 inclusive ; lowercase 97 thru 122 inclusive
+function alphaInput () {
+	var str = document.getElementById("inputStr").value;
+
+	for (var i=0; i< str.length; i++) {
+		if ((str[i] < 65 || str[i] > 90) && (str[i] < 97 || str[i] > 123)) {
+		// then not alpha
+// console.log("validated not all alpha");
+// clearHTMLFields();
+		return false;
+		}
+	}
+// console.log("validated all alpha");
+	return true; // all alpha
+}
+
+function runMain() {
+	console.log("running main");
+	var testString = "";
+	reversal(testString);
+	alphabits(testString);
+	palindrome(testString);
+}
+
+
+

@@ -34,16 +34,16 @@ function palindrome() {
 //*************************************************
 // EVENT HANDLERS
 //*************************************************
+
+// <EnterKey> Event Handler #ID inputStr
 inputStr.addEventListener("keyup", function(e) {
      e.which = e.which || e.keyCode;
      if (e.which === 13) {
-// console.log("in event handler");
-     	
-     	if (alphaInput()) {
+
+     	if (onlyAlpha()) {
      		runMain();
         	
         } else {
-     		alert("You must enter alpha characters only.")
      		return false;
      	}
 
@@ -52,30 +52,42 @@ inputStr.addEventListener("keyup", function(e) {
      }
  });
 
-// verify only alpha characters
-// UPPERCASE 65 thru 90 inclusive ; lowercase 97 thru 122 inclusive
-function alphaInput () {
-	var str = document.getElementById("inputStr").value;
+// <Change This String> Event Handler #ID processStr
+processStr.addEventListener("click", function() {
+	
+	if (onlyAlpha()) {
+     	runMain();
+        	
+    } else {
+     	return false;
+    }
+});
 
-	for (var i=0; i< str.length; i++) {
-		if ((str[i] < 65 || str[i] > 90) && (str[i] < 97 || str[i] > 123)) {
-		// then not alpha
-// console.log("validated not all alpha");
-// clearHTMLFields();
-		return false;
+// validate only alpha characters
+function onlyAlpha () {
+
+	var alphaStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	var inputStr = document.getElementById("inputStr").value;
+
+	for (var i=0; i< inputStr.length; i++) {
+		if (!alphaStr.includes(inputStr[i])) { // not alpha char
+			alert("You must enter alpha characters only.")
+			document.getElementById("inputStr").value = "";
+			return false;
 		}
 	}
-// console.log("validated all alpha");
-	return true; // all alpha
-}
+	return true; // inputStr is all alpha
+};
+
 
 function runMain() {
 	console.log("running main");
-	var testString = "";
+	var inputStr = document.getElementById("inputStr").value;
+	console.log("inputStr :: ", inputStr);
 	reversal(testString);
 	alphabits(testString);
 	palindrome(testString);
-}
+};
 
 
 

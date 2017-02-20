@@ -2,6 +2,8 @@
 // of the characters in the string, 
 // ... and outputs the result in the DOM, 
 // below the text input.
+//
+// FUNCTION RETURNS STRING IN REVERSE ORDER
 function reversal(inputStr) {
 
 	var reversedStr = ""; 
@@ -16,6 +18,8 @@ function reversal(inputStr) {
 // 5. Implement the logic in the alphabits function that return the characters 
 // in alphabetical order, 
 // ... and outputs the result in the DOM, below the text input.
+//
+// FUNCTION RETURNS STRING ALPHABETIZED STRING
 function alphabits(inputStr) {
 
 	return inputStr.toLowerCase().split('').sort().join('');
@@ -25,10 +29,28 @@ function alphabits(inputStr) {
 
 
 // 6. Implement the logic in the palindrome function that determine whether 
-// the string is a palindrome. If it is, display the text "Your string is a palidrome" 
+// the string is a palindrome. If it is, 
+// ... display the text "Your string is a palidrome" 
 // in the DOM, below the text input.
-function palindrome() {
+//
+// FUNCTION RETURNS <true> IF PALINDROME; <false> IF NOT
+function palindrome(inputStr) {
 
+	var inputStr = inputStr.toLowerCase();
+
+	var loopLength;
+	if (inputStr.length%2 === 0) {
+		loopLength = inputStr.length%2; 	// string has even number of elements
+	} else {
+		loopLength = inputStr.length%2 + 1; // string has odd number of elements
+	}
+
+	for (var i=0; i<loopLength; i++) {
+		if (inputStr[i] !== inputStr[inputStr.length - (i+1)]) { // characters do not match
+			return false;										 // not a palindrome
+		}
+	}
+	return true; // string is a palindrome
 }
 
 
@@ -94,14 +116,20 @@ function runMain() {
 	var testString = document.getElementById("inputStr").value;
 	var reversed; 
 	var alphabetized;
-	var palindromeString;
+	var isPalindrome;
 
 console.log("testString :: ", testString);
 	reversed = reversal(testString);
 console.log("reversed string :: ", reversed);
 	alphabetized = alphabits(testString);
 console.log("alphabetized string :: ", alphabetized);
-	palindromeString = palindrome(testString);
+	isPalindrome = palindrome(testString);
+	if (isPalindrome) {
+		console.log("Your string is a palindrome");
+	} else {
+		console.log("Your string is not a palindrome");
+	}
+
 };
 
 

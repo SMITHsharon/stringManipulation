@@ -1,8 +1,13 @@
 // 4. Implement the logic in the reversal function that reverses the order 
 // of the characters in the string, and outputs the result in the DOM, 
 // below the text input.
-function reversal() {
+function reversal(inputStr) {
 
+	var reversedStr = ""; 
+	for (var i=inputStr.length-1; i>-1; i--) {
+		reversedStr += inputStr[i];
+	}
+	return reversedStr;
 }
 
 
@@ -81,10 +86,12 @@ function onlyAlpha () {
 
 
 function runMain() {
-	console.log("running main");
-	var inputStr = document.getElementById("inputStr").value;
-	console.log("inputStr :: ", inputStr);
-	reversal(testString);
+// console.log("running main");
+	var testString = document.getElementById("inputStr").value;
+	var reversed; 
+console.log("testString :: ", testString);
+	reversed = reversal(testString);
+console.log("reversed string :: ", reversed);
 	alphabits(testString);
 	palindrome(testString);
 };

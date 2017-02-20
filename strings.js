@@ -1,5 +1,6 @@
 // 4. Implement the logic in the reversal function that reverses the order 
-// of the characters in the string, and outputs the result in the DOM, 
+// of the characters in the string, 
+// ... and outputs the result in the DOM, 
 // below the text input.
 function reversal(inputStr) {
 
@@ -13,9 +14,12 @@ function reversal(inputStr) {
 
 
 // 5. Implement the logic in the alphabits function that return the characters 
-// in alphabetical order, and outputs the result in the DOM, below the text input.
-function alphabits() {
+// in alphabetical order, 
+// ... and outputs the result in the DOM, below the text input.
+function alphabits(inputStr) {
 
+	return inputStr.toLowerCase().split('').sort().join('');
+	
 }
 
 
@@ -89,11 +93,15 @@ function runMain() {
 // console.log("running main");
 	var testString = document.getElementById("inputStr").value;
 	var reversed; 
+	var alphabetized;
+	var palindromeString;
+
 console.log("testString :: ", testString);
 	reversed = reversal(testString);
 console.log("reversed string :: ", reversed);
-	alphabits(testString);
-	palindrome(testString);
+	alphabetized = alphabits(testString);
+console.log("alphabetized string :: ", alphabetized);
+	palindromeString = palindrome(testString);
 };
 
 

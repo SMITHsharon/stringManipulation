@@ -11,7 +11,7 @@ function reversal(inputStr) {
 		reversedStr += inputStr[i];
 	}
 	return reversedStr;
-}
+};
 
 
 
@@ -24,7 +24,7 @@ function alphabits(inputStr) {
 
 	return inputStr.toLowerCase().split('').sort().join('');
 	
-}
+};
 
 
 
@@ -46,12 +46,18 @@ function palindrome(inputStr) {
 	}
 
 	for (var i=0; i<loopLength; i++) {
+console.log("in palindrome for loop");
+console.log("inputStr[i] :: ", inputStr[i]);
+console.log("inputStr[inputStr.length - (i+1)]");
 		if (inputStr[i] !== inputStr[inputStr.length - (i+1)]) { // characters do not match
+console.log("inputStr[i], for i = ", i, "; ", inputStr[i]);
+console.log("inputStr[length - (i+1)] :: ", inputStr[ilength - (i+1)]);
 			return false;										 // not a palindrome
 		}
 	}
 	return true; // string is a palindrome
-}
+};
+
 
 
 
@@ -59,8 +65,6 @@ function palindrome(inputStr) {
 // set the value of the testString variable (see below) to the value of the input.
 
 // 8. The output of each of the functions should immediately appear as well.
-
-
 
 //*************************************************
 // EVENT HANDLERS
@@ -112,24 +116,30 @@ function onlyAlpha () {
 
 
 function runMain() {
-// console.log("running main");
 	var testString = document.getElementById("inputStr").value;
 	var reversed; 
 	var alphabetized;
 	var isPalindrome;
+	var palindromeStr;
+	var outputText = document.getElementById("output");
 
-console.log("testString :: ", testString);
 	reversed = reversal(testString);
-console.log("reversed string :: ", reversed);
+
 	alphabetized = alphabits(testString);
-console.log("alphabetized string :: ", alphabetized);
+
 	isPalindrome = palindrome(testString);
 	if (isPalindrome) {
-		console.log("Your string is a palindrome");
+		palindromeStr = "Your string is a palindrome";
 	} else {
-		console.log("Your string is not a palindrome");
+		palindromeStr = "Your string is not a palindrome";
 	}
 
+	outputText.innerHTML = "<p>Given String: " + testString + "</p>" 
+		+ "<p>Reversed String: " + reversed + "</p>"
+		+ "<p>Alphabetized String: " + alphabetized + "</p>"
+		+ "<p>Palindrome? " + palindromeStr + "</p>";
+
+	document.getElementById("inputStr").value = ""; // clear user input field
 };
 
 

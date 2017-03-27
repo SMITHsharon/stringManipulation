@@ -1,7 +1,7 @@
 # NSS String Manipulation
 
 ### Project Description 
-This exercise prompts for user text input, then outputs on the screen:
+This exercise prompts for user text input, then outputs to the screen:
 - the string charactors printed in reverse
 - the string characters alphabetized
 - whether or not the string is a palindrome

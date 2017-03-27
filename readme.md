@@ -8,13 +8,13 @@ This exercise prompts for user text input, then outputs on the screen:
 
 
 #### Screen Grab on Launch
-![Screen Grab on Launch](...)
+![Screen Grab on Launch](https://raw.githubusercontent.com/SMITHsharon/stringManipulation/screens/screens/String%20Manipulation%20on%20Launch.png)
 
 #### Screen Grab Showing Output, where input string is not a palindrome
-![Screen Grab Output, Not a Palindrome](...)
+![Screen Grab Output, Not a Palindrome](https://raw.githubusercontent.com/SMITHsharon/stringManipulation/screens/screens/String%20Manipulation%20Not%20Palindrome.png)
 
 #### Screen Grab Showing Output, where input string is a palindrome
-![Screen Grab Output, String Is a Palindrome](...)
+![Screen Grab Output, String Is a Palindrome](https://raw.githubusercontent.com/SMITHsharon/stringManipulation/screens/screens/String%20Manipulation%20w%20Palindrome.png)
 
 
 ### Project Specs

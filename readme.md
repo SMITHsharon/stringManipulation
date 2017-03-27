@@ -1,36 +1,68 @@
-# (24) String Manipulation
-# due 02.25.2017
+# NSS String Manipulation
 
-1. Copy the code below into the JavaScript file
+### Project Description 
+This exercise prompts for user text input, then outputs on the screen:
+- the string charactors printed in reverse
+- the string characters alphabetized
+- whether or not the string is a palindrome
 
-2. In your HTML, create an text input and a button.
 
-3. The text input should only accept letters. No numbers.
+#### Screen Grab on Launch
+![Screen Grab on Launch](...)
 
-4. Implement the logic in the reversal function that reverses the order of the characters in the string, and outputs the result in the DOM, below the text input.
+#### Screen Grab Showing Output, where input string is not a palindrome
+![Screen Grab Output, Not a Palindrome](...)
 
-5. Implement the logic in the alphabits function that return the characters in alphabetical order, and outputs the result in the DOM, below the text input.
+#### Screen Grab Showing Output, where input string is a palindrome
+![Screen Grab Output, String Is a Palindrome](...)
 
-6. Implement the logic in the palindrome function that determine whether the string is a palindrome. If it is, display the text "Your string is a palidrome" in the DOM, below the text input.
 
-7. When the user presses the enter key in the text input, or clicks the button, set the value of the testString variable (see below) to the value of the input.
+### Project Specs
+Given, the following `JavaScript` code:
 
-8. The output of each of the functions should immediately appear as well.
+	```
+	function reversal() {
 
-function reversal() {
+	}
 
-}
+	function alphabits() {
 
-function alphabits() {
+	}
 
-}
+	function palindrome() {
 
-function palindrome() {
+	}
 
-}
+	var testString = "";
+	reversal(testString);
+	alphabits(testString);
+	palindrome(testString);
+	```
 
-var testString = "";
-reversal(testString);
-alphabits(testString);
-palindrome(testString);
-Contact GitHub API Training Shop Blog About
+- Created an `html` text input field and `Change This String` button. 
+- Copied the code snippet provided, and wrote the respective functions to produce the desired output. 
+- Wrote a supporting function, `onlyAlpha`, that validates the input consists of only alpha characters, no numbers. 
+- Wrote the function `outputText` to write the results of `reversal`, `alphabits`, and `palindrome` to the DOM.
+- Coded event listeners tied to the `Enter` key and the `Change This String` button to fire when pressed or clicked, respectively. 
+
+
+### Technologies Used
+- `html`
+- `javascript`
+
+
+### How To Run the App
+#### (Node must be installed on your machine):
+```
+git clone https://github.com/SMITHsharon/stringManipulation.git
+cd strings
+npm install http-server -g
+http-server -p 8080
+```
+
+This will show in your browser (at the console) at: `http://localhost:8080`
+
+
+### Contributor
+[Sharon Smith](https://github.com/SMITHsharon)
+

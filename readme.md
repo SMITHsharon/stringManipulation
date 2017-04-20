@@ -57,7 +57,7 @@ Given, the following `JavaScript` code:
 git clone https://github.com/SMITHsharon/stringManipulation.git
 cd strings
 http-server -p 8080
-This will show in your browser (at the console) at: http://localhost:8080
+This will show in your browser at: http://localhost:8080
 ```
 
 

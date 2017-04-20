@@ -4,7 +4,7 @@
 This exercise prompts for user text input, then outputs to the screen:
 - the string charactors printed in reverse
 - the string characters alphabetized
-- whether or not the string is a palindrome
+- whether or not the input string is a palindrome
 
 
 #### Screen Grab on Launch
@@ -48,7 +48,7 @@ Given, the following `JavaScript` code:
 
 ### Technologies Used
 - `html`
-- `javascript`
+- `JavaScript`
 
 
 ### How To Run the App
@@ -56,11 +56,9 @@ Given, the following `JavaScript` code:
 ```
 git clone https://github.com/SMITHsharon/stringManipulation.git
 cd strings
-npm install http-server -g
 http-server -p 8080
+This will show in your browser (at the console) at: http://localhost:8080
 ```
-
-This will show in your browser (at the console) at: `http://localhost:8080`
 
 
 ### Contributor
